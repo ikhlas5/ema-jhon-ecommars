@@ -8,8 +8,8 @@ const Cart = (props) => {
     let quantity=0;
     for(const product of cart){
         quantity=quantity+product.quantity;
-        total=total+product.price;
-        shipping=shipping+product.shipping;
+        total=total+product.price * product.quantity;
+        shipping=shipping+product.shipping * product.quantity;
     }
     const tax= parseFloat((total*10/100).toFixed(2));
     const grandTotal= total+ shipping+tax;
