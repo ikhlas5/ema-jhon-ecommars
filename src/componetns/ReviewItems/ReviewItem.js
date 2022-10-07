@@ -13,9 +13,9 @@ const ReviewItem = ({product, handleRemoveItem}) => {
             <div className="review-details-container">
             <div className="review-details">
                 <h5>{name}</h5>
-                <p><small>Price:${price}</small></p>
-                <p><small>Price:$Shipping:{shipping}</small></p>
-                <p><small>Quantity:{quantity}</small></p>
+                <p>Price: <span className='text-orange-600'>${price}</span></p>
+                <p><small>Shipping: <span className='text-orange-600'>${shipping}</span></small></p>
+                <p><small>Quantity: <span className='text-orange-600'>${quantity}</span></small></p>
             </div>
             <div className="delete-container">
                 <button onClick={()=>handleRemoveItem(id)} className='btn-delete'>

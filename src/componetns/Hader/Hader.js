@@ -1,7 +1,7 @@
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../images/Logo.svg'
 import'./Hader.css'
 const Hader = () => {
@@ -17,10 +17,21 @@ const Hader = () => {
                 }
                 </div>
             <ul className={`md:flex justify-center absolute duration-1000 ease-in-out md:static ${open?'top-6':'top-[-120px]'}`}>
-              <Link to="/">Shop</Link>
-              <Link to="/orders">Orders</Link>
-                <Link to="/inventory">Inventory</Link>
-                <Link to="/about">About</Link>
+                <NavLink className={({ isActive }) =>
+              isActive ? ' underline' : undefined
+            }  to="/">Home</NavLink>
+                <NavLink className={({ isActive }) =>
+              isActive ? 'activeClassName' : undefined
+            } to="/shop">Shop</NavLink>
+                <NavLink className={({ isActive }) =>
+              isActive ? 'activeClassName' : undefined
+            } to="/orders">Orders</NavLink>
+                <NavLink className={({ isActive }) =>
+              isActive ? 'activeClassName' : undefined
+            } to="/inventory">Inventory</NavLink>
+                <NavLink className={({ isActive }) =>
+              isActive ? 'activeClassName' : undefined
+            } to="/about">About</NavLink>
             </ul> 
             </div>
            
@@ -29,3 +40,6 @@ const Hader = () => {
 };
 
 export default Hader;
+//  className={({ isActive }) =>
+// isActive ? activeClassName : undefined
+// }
