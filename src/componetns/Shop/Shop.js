@@ -46,8 +46,9 @@ const Shop = () => {
         addToDb(selectedProduct.id);
     }
     return (
-        <div className='shop-container'>
-            <div className="products-container">
+        <div className='shop-container '>
+         
+         <div className="products-container grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
         {
             products.map(product=><Product 
                 product={product}
@@ -60,6 +61,7 @@ const Shop = () => {
             <div className="cart-container">
                 <Cart cart={cart} clearCart={clearCart} ></Cart>
             </div>
+         
         </div>
     );
 };
