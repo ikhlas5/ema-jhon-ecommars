@@ -48,14 +48,14 @@ const Shop = () => {
     return (
         <div className='shop-container '>
          
-         <div className="products-container grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-        {
-            products.map(product=><Product 
-                product={product}
-                key={product.id}
-                   handleAddToCart={handleAddToCart}>
-                </Product>)
-        }
+         <div className="products-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   xl:grid-cols-3 gap-5">
+                {
+                    products.map(product=><Product 
+                        product={product}
+                        key={product.id}
+                        handleAddToCart={handleAddToCart}>
+                        </Product>)
+                }
        
             </div>
             <div className="cart-container">

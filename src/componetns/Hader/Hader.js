@@ -11,28 +11,33 @@ const Hader = () => {
             <img src={logo} alt="" />
 
             <div>
-                <div onClick={()=>setOpen(!open)} className="h-6 w-6 md:hidden">
+                <div onClick={()=>setOpen(!open)} className="h-6 w-6 md:hidden float-right text-white">
                 {
                     open?<FontAwesomeIcon icon={faXmark}></FontAwesomeIcon> : <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
                 }
                 </div>
-            <ul className={`md:flex justify-center absolute duration-1000 ease-in-out md:static ${open?'top-6':'top-[-120px]'}`}>
-                <NavLink className={({ isActive }) =>
+            <ul className={`md:flex justify-center absolute duration-1000 ease-in-out md:static ${open?'top-6':'top-[-120px]'} sm-color `}>
+                <li><NavLink className={({ isActive }) =>
               isActive ? ' underline' : undefined
-            }  to="/">Home</NavLink>
-                <NavLink className={({ isActive }) =>
+            }  to="/">Home</NavLink></li>
+
+               <li> <NavLink className={({ isActive }) =>
               isActive ? 'activeClassName' : undefined
-            } to="/shop">Shop</NavLink>
-                <NavLink className={({ isActive }) =>
+            } to="/shop">Shop</NavLink></li>
+
+                <li><NavLink className={({ isActive }) =>
               isActive ? 'activeClassName' : undefined
-            } to="/orders">Orders</NavLink>
-                <NavLink className={({ isActive }) =>
+            } to="/orders">Orders</NavLink></li>
+
+               <li> <NavLink className={({ isActive }) =>
               isActive ? 'activeClassName' : undefined
-            } to="/inventory">Inventory</NavLink>
-                <NavLink className={({ isActive }) =>
+            } to="/inventory">Inventory</NavLink></li>
+
+               <li> <NavLink className={({ isActive }) =>
               isActive ? 'activeClassName' : undefined
-            } to="/about">About</NavLink>
+            } to="/about">About</NavLink></li>
             </ul> 
+            
             </div>
            
         </nav>

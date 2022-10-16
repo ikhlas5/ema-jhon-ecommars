@@ -3,9 +3,9 @@
     grid-template-columns: 4fr 1fr;
 }
 .products-container{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap:30px ;
+    gap:30px ; */
     margin: 100px 50px;
 }
 .cart-container{
@@ -16,5 +16,16 @@
     .products-container{
         grid-template-columns: repeat(3,1fr);
 
+    }
+}
+@media screen and (max-width:768px) {
+    .shop-container{
+       
+        display: flex;
+        flex-direction: column;
+    }
+    .products-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr)
     }
 }
