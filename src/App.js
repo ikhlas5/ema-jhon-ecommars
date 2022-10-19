@@ -8,6 +8,9 @@ import Inventory from './componetns/Inventory/Inventory';
 import About from './componetns/About/About';
 import Orders from './componetns/order/Order';
 import Home from './componetns/Home/Home';
+import Login from './componetns/Login/Login';
+import SingUp from './componetns/SingUp/SingUp';
+import PrivateRoute from './PrivateRoutes/PrivateRoute';
 
 function App() {
   const router= createBrowserRouter([
@@ -27,16 +30,24 @@ function App() {
         {
           path:'orders',
           loader:productsAndCartLoader ,
-          element:<Orders></Orders>
+          element:<PrivateRoute><Orders></Orders></PrivateRoute>
 
         },
         {
           path:'inventory',
-          element:<Inventory></Inventory>
+          element:<PrivateRoute><Inventory></Inventory></PrivateRoute>
         },
         {
           path:'about',
           element:<About></About>
+        },
+        {
+          path:'login',
+          element:<Login></Login>
+        },
+        {
+          path:'signup',
+          element:<SingUp></SingUp>
         },
         {
           path:'*',

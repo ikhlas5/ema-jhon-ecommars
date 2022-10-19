@@ -42,3 +42,10 @@
     color: #EB5757;
     font-size: 31px;
 }
+@media screen and(max-width:768px) {
+    .review-item{
+        width: 100px;
+       
+    }
+    
+}

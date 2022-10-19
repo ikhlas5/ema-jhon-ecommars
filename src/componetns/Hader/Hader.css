@@ -14,9 +14,14 @@
     margin-left: 32px;
 }
 .navbar a:hover{
-    color: orange;
-    background-color: cadetblue;
+    color: orangered;
     padding: 4px;
     border-radius: 2px;
     
+}
+@media screen and (max-width:768px) {
+    .navbar{
+        height: 200px;
+    }
+   
 }
