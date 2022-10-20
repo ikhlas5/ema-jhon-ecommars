@@ -6,7 +6,7 @@ const Login = () => {
     const{signIn}=useContext(AuthContext);
     const navigate=useNavigate();
     const location=useLocation();
-    const from=location.state?.from?.pathname || '/'
+    const from=location.state?.from?.pathname || '/';
 
     const handleSubmit=e=>{
         e.preventDefault();
@@ -24,7 +24,7 @@ const Login = () => {
         .catch(error => console.error(error));
     }
     return (
-        <div className='border bg-gray-400 rounded my-20 mx-auto md:h-[600px] md:w-[500px] pl-[40px] shadow-2xl w-96 mx-auto'>
+        <div className='border bg-gray-400 rounded my-20 mx-auto md:h-[600px] md:w-[500px] pl-[40px] shadow-2xl w-96 '>
         <h2 className='font-medium text-3xl text-[#2A414F] text-center mt-5'>Login</h2>
         <form onSubmit={handleSubmit}>
             <div className="mb-5">

@@ -1,10 +1,14 @@
 import React,{ useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 
 const SingUp = () => {
     const [error,setError]=useState(null);
     const{createUser}=useContext(AuthContext);
+
+    const navigate=useNavigate();
+    const location=useLocation();
+    const from=location.state?.from?.pathname || '/';
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -26,6 +30,7 @@ const SingUp = () => {
         const user=result.user;
         console.log(user)
         form.reset();
+        navigate(from,{replace:true})
        })
        .catch(error => console.error(error));
     }
